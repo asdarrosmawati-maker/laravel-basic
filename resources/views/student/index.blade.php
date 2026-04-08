@@ -1,7 +1,9 @@
 <x-app>
 
     <x-slot:title>{{ $title }}</x-slot>
-
-        <h1 class="fw-bold">DATA STUDENT</h1>
-
-        <x-app>
+        <ul class="list-group">
+            @foreach ($students as $student)
+            <li class="list-group-item">{{ $student->nim }} {{ $student->name }}</li>
+            @endforeach
+        </ul>
+</x-app>
