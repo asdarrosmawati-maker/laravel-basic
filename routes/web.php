@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\LecturerController;
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
@@ -11,3 +13,6 @@ Route::post('/Student/store', [StudentController::class, 'store'])->name('Studen
 Route::get('/Student/{student}edit', [StudentController::class, 'edit'])->name('Student.edit');
 Route::put('/Student/{student}', [StudentController::class, 'update'])->name('Student.update');
 Route::delete('/Student/{student}', [StudentController::class, 'destroy'])->name('Student.destroy');
+
+Route::resource('department', DepartmentController::class);
+Route::resource('lecturer', LecturerController::class);
