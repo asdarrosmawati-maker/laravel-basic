@@ -14,7 +14,7 @@
         @foreach ($lecturers as $lecturer)
             <li class="list-group-item">
                 {{ $loop->iteration }}. {{ $lecturer->name }} -- {{ $lecturer->department->name }}
-                <a class="btn btn-warning btn-sm " href="{{ route('lecturer.create', $lecturer) }}" role="button">edit</a>
+                <a class="btn btn-warning btn-sm " href="{{ route('lecturer.edit', $lecturer) }}" role="button">edit</a>
                 <form action="{{ route('lecturer.destroy', $lecturer) }}" method="POST" class="d-inline">
                     @method('DELETE')
                     @csrf
