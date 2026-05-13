@@ -14,7 +14,7 @@ class StudentController extends Controller
     public function index()
     {
         return view('Student.index', [
-            'title' => ' STUDENT',
+            'title' => ' Student',
             'students' => Student::latest()->get(),
         ]);
     }
