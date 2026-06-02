@@ -13,16 +13,16 @@ class LecturerController extends Controller
      */
     public function index()
     {
-    $lecturers = lecturer::latest();
-        $keyword = Request('keyword');
-        if($keyword){
-            $lecturers ->where('name','like','%'. $keyword. '%');
-        }
+    $lecturers = lecturer::latest()->filter(request(['keyword', 'department_id']));
+        // $keyword = Request('keyword');
+        // if($keyword){
+        //     $lecturers ->where('name','like','%'. $keyword. '%');
+        // }
 
-        $department_id = request('department_id');
-        if($department_id){
-            $lecturers ->where('department_id', $department_id);
-        }
+        // $department_id = request('department_id');
+        // if($department_id){
+        //     $lecturers ->where('department_id', $department_id);
+        // }
 
         return view('lecturer.index', [
             'title' => ' Lecturer',

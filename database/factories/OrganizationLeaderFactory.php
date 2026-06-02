@@ -2,13 +2,13 @@
 
 namespace Database\Factories;
 
-use App\Models\Model;
+use App\Models\OrganizationLeader;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends Factory<Model>
+ * @extends Factory<OrganizationLeader>
  */
-class OrganizationFactory extends Factory
+class OrganizationLeaderFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,7 +18,7 @@ class OrganizationFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->company(),
+            'leader_name' => fake()->name(),
         ];
     }
 }
