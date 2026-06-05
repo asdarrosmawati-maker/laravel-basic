@@ -15,6 +15,11 @@ Route::get('/Student/{student}edit', [StudentController::class, 'edit'])->name('
 Route::put('/Student/{student}', [StudentController::class, 'update'])->name('Student.update');
 Route::delete('/Student/{student}', [StudentController::class, 'destroy'])->name('Student.destroy');
 
+// soft delete
+Route::get('/Student/trash', [StudentController::class, 'trash'])->name('Student.trash');
+Route::put('/Student/restore/{student}', [StudentController::class, 'restore'])->name('Student.restore')->withTrashed();
+Route::patch('/Student/force-delete/{student}', [StudentController::class, 'forceDelete'])->name('Student.forceDelete')->withTrashed();
+
 Route::resource('department', DepartmentController::class);
 Route::resource('lecturer', LecturerController::class);
 Route::resource('organization', OrganizationController::class);
